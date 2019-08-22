@@ -9,7 +9,7 @@ import styled, {css} from 'react-emotion';
 
 import {
   DEBOUNCE_DURATION,
-  MAX_RELEASES,
+  MAX_AUTOCOMPLETE_RELEASES,
   NEGATION_OPERATOR,
   SEARCH_WILDCARD,
 } from 'app/constants';
@@ -481,7 +481,7 @@ class SmartSearchBar extends React.Component {
     const queryString = new URLSearchParams(window.location.search);
     const projectId = queryString.get('project');
 
-    return await fetchReleases(api, organization.slug, projectId, query, MAX_RELEASES);
+    return await fetchReleases(api, organization.slug, projectId, query, MAX_AUTOCOMPLETE_RELEASES);
   };
 
   onInputClick = () => {
